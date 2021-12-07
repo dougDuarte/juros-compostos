@@ -1,0 +1,266 @@
+:root {
+    --main_color: #673ab7;
+    --main_color_bright: #9575cd;
+    --main_color_brighter: #b39ddb;
+    --secondary_color: #ffc107;
+    --bright_color: #fdfdfd;
+    --grey_color: #cccccc;
+    --dark_color: #666666;
+    --line_color: #eeeeee;
+    --main_padding: 96px;
+    --form_radius: 16px;
+}
+
+::selection {
+    background: var(--secondary_color);
+    color: var(--bright_color);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: var(--grey_color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary_color);
+}
+
+body, input, button {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+/*ÁREA DO FORMULÁRIO*/
+
+.form_container {
+    background-color: var(--bright_color);
+    width: 50%;
+    padding: var(--main_padding);
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.form_container h1 {
+    padding-bottom: calc(var(--main_padding) / 2);
+    margin-bottom: calc(var(--main_padding) / 2);
+    border-bottom: 2px solid var(--line_color);
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--main_color);
+}
+
+/*INPUTS*/
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+}
+
+.block_user_input {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    font-size: 16px;
+    color: var(--dark_color);
+}
+
+.block_user_input div {
+    display: flex;
+    height: 48px;
+    overflow-x: hidden;
+    border: 2px solid var(--line_color);
+    border-radius: var(--form_radius);
+}
+
+.block_user_input div > span, .block_user_input button {
+    background-color: var(--line_color);
+    display: flex;
+    align-items: center;
+    padding: 0px 12px;
+    column-gap: 8px;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--main_color);
+    fill: var(--main_color);
+}
+
+.block_user_input button {
+    cursor: pointer;
+    transition: 0.15s color, 0.15s fill, 0.15s padding;
+}
+
+.block_user_input button:hover {
+    padding: 0px 16px;
+    color: var(--main_color_bright);
+    fill: var(--main_color_bright);
+}
+
+.block_user_input button svg {
+    transition: 0.6s transform cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.block_user_input button:hover svg {
+    transform:rotateY(180deg);
+}
+
+.block_user_input button:active {
+    padding: 0px;
+    color: var(--line_color);
+    fill: var(--line_color);
+    transition: 0s color, 0s fill, 0.15s padding;
+}
+
+.block_user_input input {
+    background-color: var(--bright_color);
+    width: 100%;
+    padding: 0px 12px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: var(--dark_color);
+}
+
+/*BOTÕES*/
+
+.calculate_container {
+    display: flex;
+    justify-content: center;
+}
+
+.calculate_container input {
+    background-color: var(--main_color);
+    width: 136px;
+    height: 48px;
+    border: none;
+    border-radius: var(--form_radius);
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--bright_color);
+    cursor: pointer;
+    transition: 0.15s background-color, 0.15s color, 0.15s transform;
+}
+
+.calculate_container #button_calculate:hover {
+    background-color: var(--main_color_bright);
+    transform: scale(1.05);
+}
+
+.calculate_container #button_calculate:active {
+    transform: translateY(4px);
+}
+
+.calculate_container #button_clean{
+    background-color: #ffffff00;
+    font-weight: 600;
+    color: var(--main_color);
+}
+
+.calculate_container #button_clean:hover{
+    color: var(--main_color_bright);
+    transform: scale(1.05);
+}
+
+.calculate_container #button_clean:active{
+    transform: translateY(4px);
+}
+
+/*ÁREA DOS RESULTADOS*/
+
+.info_section {
+    background-color: var(--main_color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: var(--main_padding);
+    box-sizing: border-box;
+}
+
+.info_section h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+    color: var(--secondary_color);
+}
+
+.info_container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 48px;
+    padding: calc(var(--main_padding) / 2);
+    border: 2px solid var(--secondary_color);
+    border-radius: calc(var(--form_radius) * 2);
+}
+
+/*RESULTADOS*/
+
+.result_container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 32px;
+}
+
+.result_panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 8px;
+}
+
+.result_panel span:first-child {
+    font-size: 14px;
+    color: var(--bright_color);
+}
+
+.result_panel span:last-child {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--secondary_color);
+}
+
+#result_invested, #result_profit {
+    color: var(--main_color_brighter);
+}
+
+/*QUERY*/
+
+@media screen and (max-width: 1024px) {
+    body {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .form_container, .info_section {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form_container, .info_section {
+        padding: 48px;
+    }
+
+    .info_container {
+        padding: 0px;
+        border: none;
+    }
+
+    .calculate_container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
