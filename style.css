@@ -178,6 +178,7 @@ fieldset {
 
 .info_section {
     background-color: var(--main_color);
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -236,6 +237,34 @@ fieldset {
     color: var(--main_color_brighter);
 }
 
+/*FOOTER*/
+
+footer {
+    position: absolute;
+    bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 12px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.4;
+    color: var(--bright_color);
+}
+
+footer a {
+    fill: var(--secondary_color);
+    transition: 0.3s transform;
+}
+
+footer a:hover {
+    transform: scale(1.2);
+}
+
+footer p span {
+    font-weight: 700;
+}
+
 /*QUERY*/
 
 @media screen and (max-width: 1024px) {
@@ -246,6 +275,10 @@ fieldset {
 
     .form_container, .info_section {
         width: 100%;
+    }
+
+    .info_section {
+        height: 720px;
     }
 }
 
